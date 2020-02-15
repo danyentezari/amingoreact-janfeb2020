@@ -3,7 +3,8 @@ import React from 'react';
 const CardLayout = (prop) => {
 
     const myStyle = {
-        display: "Flex"
+        display: "Flex",
+        margin: "0 auto"
     }
 
     return (

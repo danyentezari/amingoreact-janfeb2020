@@ -3,7 +3,7 @@ import Card from './Card.js';
 import CardLayout from './CardLayout.js';
 import Navigation from './Navigation.js';
 import Banner from './Banner.js';
-import RedBlueButton from './RedBlueButton.js';
+import LoadButton from './LoadButton';
 
 function App() {
   return (
@@ -16,29 +16,9 @@ function App() {
       />
 
       <center>
-        <RedBlueButton />
+        <LoadButton />
       </center>
 
-      <CardLayout>
-        <Card 
-          title="Water"
-          description="Picture of cliffs and water"
-          buttonLabel="Read More"
-          image="https://images.unsplash.com/photo-1580953889927-245d1fcd2519?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        />
-        <Card 
-          title="Train"
-          description="Train that almost hit me"
-          buttonLabel="Read More"
-          image="https://images.unsplash.com/photo-1581087085927-0accb64abb3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-        />
-        <Card 
-          title="Bike"
-          description="Bike that actually hit me"
-          buttonLabel="Read More"
-          image="https://images.unsplash.com/photo-1581084353124-8fed61a24bbc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        />
-      </CardLayout>
       <Navigation />
     </div>
   );
