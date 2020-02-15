@@ -3,6 +3,7 @@ import React from 'react';
 const Banner = (prop) => {
 
     const bannerStyle = {
+        
         backgroundImage: `url(${prop.photo})`,
         backgroundSize: '100%',
         backgroundPosition: 'center',

@@ -3,6 +3,7 @@ import Card from './Card.js';
 import CardLayout from './CardLayout.js';
 import Navigation from './Navigation.js';
 import Banner from './Banner.js';
+import RedBlueButton from './RedBlueButton.js';
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
       <Banner 
         photo="https://images.unsplash.com/photo-1562887245-f2d5024f6134?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
       />
+
+      <center>
+        <RedBlueButton />
+      </center>
 
       <CardLayout>
         <Card 
