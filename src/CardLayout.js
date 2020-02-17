@@ -4,7 +4,9 @@ const CardLayout = (prop) => {
 
     const myStyle = {
         display: "Flex",
-        margin: "0 auto"
+        margin: "0 auto",
+        flexWrap: "wrap",
+        justifyContent: "center"
     }
 
     return (

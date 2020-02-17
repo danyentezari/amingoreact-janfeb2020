@@ -5,8 +5,9 @@ import React from 'react';
 const Card = (prop) => {
   
     const myStyle = {
-      "width": "100%",
-      "max-width": "300px"
+      margin: "20px",
+      width: "100%",
+      maxWidth: "300px"
     }
   
     return (

@@ -11,10 +11,8 @@ const LoadButton = () => {
     })
 
     const loadFeed = () => {
-
         // 1. Activate the preloader
         setState({ ...state, preloader: true })
-
         // 2. Make the external request
         fetch(`https://jsonplaceholder.typicode.com/albums/1/photos?date=${Date.now()}`) // wait for app to respond
         // 3. Wait for json() to finish
@@ -27,8 +25,7 @@ const LoadButton = () => {
                 loaded: true, 
                 feed: json 
             })
-        })
- 
+        })       
     }
 
     if(state.loaded === false && state.preloader === false) {
