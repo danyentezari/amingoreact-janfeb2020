@@ -7,7 +7,7 @@ import LoadButton from './LoadButton';
 import SaveButton from './SaveButton';
 import NewsletterBanner from './NewsletterBanner'
 
-import LoadButton2 from './LoadButton2'
+import LoadFeedButton from './LoadFeedButton'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <NewsletterBanner />
 
       <center>
-        <LoadButton2 />
+        <LoadFeedButton />
       </center>
 
       <Navigation />
