@@ -30,9 +30,15 @@ const LoadFeedButton = () => {
         
     }
 
-    console.log('from the global state', globalState.loggedIn)
 
-    if(state.feed.length === 0) {
+    if(globalState.loggedIn === false) {
+        return (
+            <div>
+                You need to be logged in.
+            </div>
+        )
+    }
+    else if(state.feed.length === 0) {
         return (
             <button onClick={loadFeed}>Load Feed</button>
         )

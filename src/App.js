@@ -12,15 +12,15 @@ import LoadFeedButton from './LoadFeedButton'
 
 function App() {
 
-  const [globalState, globalSetState] = useState(
+  const [globalState, setGlobalState] = useState(
     {
-      loggedIn: false,
+      loggedIn: true,
     }
   )
 
   return (
 
-    <AppContext.Provider value={[globalState, globalSetState]}>
+    <AppContext.Provider value={ [globalState, setGlobalState] }>
       <div className="App">
 
         <Navigation />

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from './AppContext';
 
 const Navigation = () => {
+
+    const [globalState, setGlobalState] = useContext(
+        AppContext
+    )
+
     return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button className="navbar-toggler" 
@@ -26,6 +32,17 @@ const Navigation = () => {
                 </li>
             </ul>
         </div>
+        
+        { 
+            globalState.loggedIn === false && 
+            <button className="btn btn-primary">Log In</button>
+        }
+
+        { 
+            globalState.loggedIn === true && 
+            <button className="btn btn-primary">Log Out</button>
+        }
+
     </nav> 
     )
 }
