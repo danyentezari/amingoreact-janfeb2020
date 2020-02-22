@@ -16,6 +16,15 @@ const Navigation = () => {
         )
     }
 
+    const logIn = () => {
+        setGlobalState(
+            {
+                ...globalState,
+                loggedIn: true
+            }
+        )
+    }
+
     return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button className="navbar-toggler" 
@@ -44,7 +53,7 @@ const Navigation = () => {
         
         { 
             globalState.loggedIn === false && 
-            <button className="btn btn-primary">Log In</button>
+            <button onClick={logIn} className="btn btn-primary">Log In</button>
         }
 
         { 
