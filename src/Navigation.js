@@ -7,6 +7,15 @@ const Navigation = () => {
         AppContext
     )
 
+    const logOut = () => {
+        setGlobalState(
+            {
+                ...globalState,
+                loggedIn: false
+            }
+        )
+    }
+
     return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button className="navbar-toggler" 
@@ -40,7 +49,7 @@ const Navigation = () => {
 
         { 
             globalState.loggedIn === true && 
-            <button className="btn btn-primary">Log Out</button>
+            <button onClick={logOut} className="btn btn-primary">Log Out</button>
         }
 
     </nav> 
