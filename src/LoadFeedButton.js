@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import AppContext from './AppContext';
 import CardLayout from './CardLayout';
 import Card from './Card.js';
 
 const LoadFeedButton = () => {
 
+    // global state
+    const [globalState, setGlobalState] = useContext(
+        AppContext
+    );
+
+    // local state
     const [state, setState] = useState(
         { feed: [] }
     )
@@ -22,6 +29,8 @@ const LoadFeedButton = () => {
         })
         
     }
+
+    console.log('from the global state', globalState.loggedIn)
 
     if(state.feed.length === 0) {
         return (
