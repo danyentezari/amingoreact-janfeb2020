@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import AppContext from './AppContext';
 
-const Navigation = () => {
+const Navigation = (prop) => {
 
     const [globalState, setGlobalState] = useContext(
         AppContext
@@ -26,7 +27,7 @@ const Navigation = () => {
     }
 
     return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className={`navbar navbar-expand-lg navbar-light bg-light ${prop.class}`}>
         <button className="navbar-toggler" 
             type="button" 
             data-toggle="collapse" 
@@ -40,13 +41,13 @@ const Navigation = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Home</a>
+                    <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">About</a>
+                    <Link className="nav-link" to="/about">About</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Contact</a>
+                    <Link className="nav-link" to="/contact">Contact</Link>
                 </li>
             </ul>
         </div>

@@ -1,41 +1,47 @@
-import React, { useState, useContext } from 'react';
+import React, {useState} from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AppContext from './AppContext';
+import LandingPage from './LandingPage';
+import About from './About';
+import Product from './Product';
+import Navigation from './Navigation';
 
-import Card from './Card.js';
-import CardLayout from './CardLayout.js';
-import Navigation from './Navigation.js';
-import Banner from './Banner.js';
-import LoadButton from './LoadButton';
-import SaveButton from './SaveButton';
-import NewsletterBanner from './NewsletterBanner'
-import LoadFeedButton from './LoadFeedButton'
+const LayoutRoute = ({ location, path, exact, component }) => {
+    return (
+        <div>
+            <Navigation location={location.pathname} />
+            <Route 
+                path={path} 
+                exact={exact}
+                component={component}
+            />
+            <Navigation location={location.pathname} />
+        </div>
+    )
+}
 
-function App() {
+const App = () => {
 
-  const [globalState, setGlobalState] = useState(
-    {
-      loggedIn: true,
-    }
-  )
+    const [globalState, setGlobalState] = useState(
+        {
+            loggedIn: true,
+        }
+    )
 
-  return (
+    return (
+        <AppContext.Provider value={ [globalState, setGlobalState] }>
+            <BrowserRouter>
+                
+                <Switch>
+                    <LayoutRoute path="/" exact component={LandingPage} />
+                    <LayoutRoute path="/about/" component={About} />
+                    <LayoutRoute path="/product/" component={Product} />
+                </Switch>
 
-    <AppContext.Provider value={ [globalState, setGlobalState] }>
-      <div className="App">
+            </BrowserRouter>
+        </AppContext.Provider>
+    )
 
-        <Navigation />
-
-        <NewsletterBanner />
-
-        <center>
-          <LoadFeedButton />
-        </center>
-
-        <Navigation />
-      </div>
-    </AppContext.Provider>
-
-  );
 }
 
 export default App;
