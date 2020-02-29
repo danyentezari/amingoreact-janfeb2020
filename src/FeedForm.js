@@ -11,7 +11,7 @@ const FeedForm = () => {
 
     const sendFeed = () => {
         // Fetch request goes
-        fetch('http://localhost:3010/feed/create', 
+        fetch(`${process.env.REACT_APP_BACKEND_URL}feed/create`, 
         {
             method: 'POST',
             headers: {"Content-Type": "application/json"},

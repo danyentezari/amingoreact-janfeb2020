@@ -13,6 +13,7 @@ import FeedForm from './FeedForm';
 
 
 function LandingPage() {
+
   return (
       <div className="LandingPage">
 

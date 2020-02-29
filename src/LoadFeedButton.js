@@ -17,7 +17,7 @@ const LoadFeedButton = () => {
 
     const loadFeed = () => {
         // Fetch request goes
-        fetch('http://localhost:3010/feed/all')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}feed/all`)
         .then(response => response.json())
         .then(json=> {
             setState(
