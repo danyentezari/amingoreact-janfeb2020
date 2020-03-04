@@ -24,7 +24,7 @@ const App = () => {
 
     const [globalState, setGlobalState] = useState(
         {
-            loggedIn: true,
+            loggedIn: sessionStorage.getItem('jwt') ? true : false,
         }
     )
 

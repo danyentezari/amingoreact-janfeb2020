@@ -9,6 +9,9 @@ const Navigation = (prop) => {
     )
 
     const logOut = () => {
+
+        sessionStorage.clear();
+
         setGlobalState(
             {
                 ...globalState,

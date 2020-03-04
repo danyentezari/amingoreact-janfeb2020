@@ -10,9 +10,13 @@ import SaveButton from './SaveButton';
 import NewsletterBanner from './NewsletterBanner'
 import LoadFeedButton from './LoadFeedButton';
 import FeedForm from './FeedForm';
+import LoginForm from './LoginForm';
 
 
 function LandingPage() {
+
+
+  const [globalState, setGlobalState] = useContext(AppContext);
 
   return (
       <div className="LandingPage">
@@ -22,6 +26,8 @@ function LandingPage() {
         <center>
           <LoadFeedButton />
         </center>
+
+        {!globalState.loggedIn && <LoginForm />}
 
         <FeedForm />
 
